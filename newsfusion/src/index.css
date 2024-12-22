@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Header */
+.App-header{
+  padding-left: 6%;
+  padding-right: 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}  
+
+.search-bar{
+  height: 12px;
+  width: 250px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
+
+.news-area{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f2f2f2;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* News Card Css */
+.news-card{
+  width: 260px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  border-color: 1px solid rgb(233, 205, 205);
+}
+.blog-img{
+  height:200px;
+  width: 260px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.blog-title{
+  text-decoration: none;
+  color: #040508;
+}
+ 
+/* Pagination CSS */
+
+section.Pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+.pagination{
+  text-align: center;
+  margin-top:40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pages{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-number{
+  cursor: pointer;
+  background-color: lightgray;
+  color: black;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  transition: 0.4s ease;
+}
+.active{
+  font-size: 1rem;
+    height: 40px;
+    width: 40px;
+    background-color: royalblue;
+    color: white;
+}
+button{
+  width:120px;
+  padding:8px 16px;
+  color:var(--text-blue);
+  background-color: var(--bg-white);
+  border:none;
+  cursor: pointer;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+button:hover{
+  color:var(--text-blue);
+}
+button:disabled{
+  color:var(--text-light-gray);
+  cursor: not-allowed;
+}
+#prevPage{
+  margin-right:20px;
+}
+
+#nextPage{
+  margin-left:20px;
+}
+.arrow{
+  font-size:1.2rem;
+}
+.nav-text{
+  font-size: 0.7rem;
+  letter-spacing: 0.3rem;
+}
+
+/* Form css */
+
+.form-container{
+  height: 100vh;
+}
+.row.form-input {
+  padding: 20px;
+  background-color: gainsboro;
+  border-radius: 5px;
+  width: 50%;
+}
+.form-input > input[type="text"] {
+  margin: 10px 5px;
+  border: none;
+}

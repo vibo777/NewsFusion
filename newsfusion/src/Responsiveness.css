@@ -1,0 +1,34 @@
+/* Global Css */
+
+
+
+/* Mobile Device */
+@media only screen and (max-width: 600px) {
+    .search-bar{
+        width: 150px !important;
+    }
+    .news-area {
+        justify-content: center !important;
+    }
+    .news-card{
+        width: 350px;
+    }
+    .news-card > .blog-img , .news-card > img {
+        width: 100% ;
+    }
+    .d-none {
+        display: none;
+    }
+     
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .news-area{
+        padding: 0 0 !important;
+    }
+
+
+
+}
