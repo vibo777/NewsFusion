@@ -9,7 +9,7 @@ function App() {
   },[])
 
   let [articles,setArticles] = useState([]);
-  let [category,setCategory] = useState("GenAI");
+  let [category,setCategory] = useState("geopolitics");
   const [currentPage,setCurrentPage] = useState(1);
   const [PostsPerPage] = useState(12);
 
