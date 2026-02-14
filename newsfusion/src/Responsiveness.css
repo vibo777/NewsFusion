@@ -1,11 +1,12 @@
 /* Global Css */
 
-
-
 /* Mobile Device */
 @media only screen and (max-width: 600px) {
+    .App-header{
+        font-size: 12px;
+    }
     .search-bar{
-        width: 150px !important;
+        width: 100px !important;
     }
     .news-area {
         justify-content: center !important;
