@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import.meta.env.VITE_NEWS_API_KEY;
 import News from "./News";
  
 
@@ -14,7 +15,7 @@ function App() {
   const [PostsPerPage] = useState(12);
 
   useEffect(()=>{
-    fetch(`https://newsapi.org/v2/everything?q=${category}&apiKey=4de7e0bee8234b48a486aa83403ef7ae`,{
+    fetch(`https://newsapi.org/v2/everything?q=${category}&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`,{
       method: 'GET',
       headers: {
         'Accept': 'application/json',
