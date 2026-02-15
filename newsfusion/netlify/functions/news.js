@@ -5,7 +5,7 @@ exports.handler = async function (event) {
     const category = event.queryStringParameters?.category || "india";
 
     const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${category}&apiKey=${process.env.NEWS_API_KEY}`
+      `https://newsapi.org/v2/everything?q=${category}&apiKey=${process.env.VITE_NEWS_API_KEY}`
     );
 
     const data = await response.json();
