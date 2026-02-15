@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import.meta.env.VITE_NEWS_API_KEY;
+import.meta.env.NEWS_API_KEY;
 import News from "./News";
  
 
