@@ -10,26 +10,39 @@ function App() {
   },[])
 
   let [articles,setArticles] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   let [category,setCategory] = useState("geopolitics");
   const [currentPage,setCurrentPage] = useState(1);
   const [PostsPerPage] = useState(12);
 
-  useEffect(()=>{
-    fetch(`https://newsapi.org/v2/everything?q=${category}&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`,{
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'User-Agent': 'newsfusion',
-      },
-    })
-    .then((response)=>response.json())
-    .then((news)=>{
-      setArticles(news.articles);
-    })
-    .catch((err)=>{
-      console.log(err);
-    })
-  },[category])
+  useEffect(() => {
+  const fetchNews = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await fetch(
+        `/.netlify/functions/news?category=${category}`
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch news");
+      }
+
+      const data = await response.json();
+      setArticles(data.articles || []);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load news");
+      setArticles([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchNews();
+}, [category]);
 
   // calaculate pagination variable 
   const totalPosts = articles.length;
@@ -57,6 +70,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+      {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
         <h1>NewsFusion</h1> 
 
         <input className="search-bar" onChange={(event)=>{
